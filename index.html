@@ -2,64 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SH Group | Graphic Design Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SH Group | Creative Graphic Design Studio</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #0e0e0e;
-      color: #f0f0f0;
+    /* Reset and base styles */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
     }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #eee;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    a {
+      color: #00c3ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
     header {
       background: linear-gradient(135deg, #00c3ff, #0066ff);
       padding: 60px 20px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
     header h1 {
       font-size: 3rem;
       margin-bottom: 10px;
+      font-weight: 700;
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    /* Main content */
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      flex-grow: 1;
     }
     section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+      margin-bottom: 50px;
     }
-    .services, .portfolio {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #00c3ff;
+      padding-bottom: 8px;
+    }
+
+    /* Services and Portfolio grid */
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
       gap: 20px;
     }
     .card {
-      background: #1e1e1e;
+      background: #222;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      box-shadow: 0 0 10px rgba(0,195,255,0.5);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px #00c3ff;
     }
     .card h3 {
-      margin-top: 0;
       color: #00c3ff;
+      margin-bottom: 10px;
     }
-    .contact {
-      text-align: center;
+    .card p {
+      font-size: 1rem;
+      opacity: 0.85;
     }
-    .contact a {
-      display: inline-block;
+
+    /* Contact */
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .contact-links a {
       background: #00c3ff;
-      color: #fff;
-      padding: 12px 20px;
-      margin: 10px;
+      color: #121212;
+      padding: 12px 24px;
       border-radius: 8px;
-      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,195,255,0.5);
+      transition: background-color 0.3s ease;
     }
+    .contact-links a:hover {
+      background: #0066ff;
+      color: #fff;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 20px;
       background: #111;
       font-size: 0.9rem;
+      color: #666;
+      box-shadow: inset 0 1px 3px rgba(255,255,255,0.1);
+    }
+
+    /* Responsive */
+    @media(max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -69,48 +139,52 @@
     <p>Creative Graphic Design Studio – Design That Speaks!</p>
   </header>
 
-  <section>
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="card">
-        <h3>Logo Design</h3>
-        <p>Professional and unique logos that define your brand identity.</p>
+  <main>
+    <section>
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Logo Design</h3>
+          <p>Professional and unique logos that define your brand identity.</p>
+        </div>
+        <div class="card">
+          <h3>Banner Design</h3>
+          <p>Eye-catching social media and web banners to boost your presence.</p>
+        </div>
+        <div class="card">
+          <h3>Branding Package</h3>
+          <p>Complete branding solutions including logo, color palette, and style guide.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Banner Design</h3>
-        <p>Eye-catching social media and web banners to boost your presence.</p>
-      </div>
-      <div class="card">
-        <h3>Branding Package</h3>
-        <p>Complete branding solutions including logo, color palette, and style guide.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Portfolio</h2>
-    <div class="portfolio">
-      <div class="card">
-        <h3>Modern Logo</h3>
-        <p>Clean and minimal design for a tech startup.</p>
+    <section>
+      <h2>Portfolio</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Modern Logo</h3>
+          <p>Clean and minimal design for a tech startup.</p>
+        </div>
+        <div class="card">
+          <h3>Food Banner</h3>
+          <p>Vibrant banner design for a restaurant's promo.</p>
+        </div>
+        <div class="card">
+          <h3>Fashion Brand</h3>
+          <p>Stylish branding concept for a clothing line.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Food Banner</h3>
-        <p>Vibrant banner design for a restaurant's promo.</p>
-      </div>
-      <div class="card">
-        <h3>Fashion Brand</h3>
-        <p>Stylish branding concept for a clothing line.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <a href="mailto:shgroupdesign@gmail.com">Email Us</a>
-    <a href="https://wa.me/8801234567890" target="_blank">WhatsApp</a>
-    <a href="https://facebook.com/shgroupdesign" target="_blank">Facebook Page</a>
-  </section>
+    <section>
+      <h2>Contact Us</h2>
+      <div class="contact-links">
+        <a href="mailto:shgroupdesign@gmail.com">Email Us</a>
+        <a href="https://wa.me/8801234567890" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://facebook.com/shgroupdesign" target="_blank" rel="noopener">Facebook Page</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 SH Group. Designed by Mohammad Tanvir_Crypto
